@@ -93,11 +93,9 @@ class StringMatchTool {
             if spans[index] > count {
                 count = spans[index]
             }
-            spans[index] = count
             if count > 0 {
                 matches[index] = true
             }
-            
             count -= 1
             index += 1
         }
@@ -131,5 +129,4 @@ class StringMatchTool {
         }
         writeSpansToMatching(text: text)
     }
-    
 }

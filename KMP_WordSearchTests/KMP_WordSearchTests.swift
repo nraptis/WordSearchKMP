@@ -5,6 +5,13 @@
 //  Created by Nicky Taylor on 11/17/22.
 //
 
+//Conclusion of this test:
+//KMP offers no speed benefit for typical searches,
+//it's slower than a brute force search.
+
+//For oddball cases like "aaaaaaaaaaa" and "aaa" it
+//is faster.
+
 import XCTest
 @testable import KMP_WordSearch
 import os.log
@@ -284,7 +291,7 @@ final class KMP_WordSearchTests: XCTestCase {
         var bfTool = StringMatchToolBruteForce()
         var kmpTool = StringMatchTool()
         
-        var outerLoops = 1_000
+        var outerLoops = 10_000
         
         while outerLoops > 0 {
             
@@ -327,9 +334,5 @@ final class KMP_WordSearchTests: XCTestCase {
             
             outerLoops -= 1
         }
-        
-        
-        
     }
-
 }
